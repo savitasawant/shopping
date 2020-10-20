@@ -19,7 +19,19 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
+import { OverlayModule } from '@angular/cdk/overlay';
+
+
 import { SignupService } from './pages/signup/signup.service';
+import { HeaderComponent } from './pages/home/header/header.component';
+import { ProductListComponent } from './pages/home/product-list/product-list.component';
+import { CartListComponent } from './pages/home/cart-list/cart-list.component';
+import { HomeService } from './pages/home/home.service';
+import { NotAuthGuardService as NoAuthGuard  } from './authentication/not-auth-guard.service';
+import { AuthGuardService as AuthGuard } from './authentication/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +39,10 @@ import { SignupService } from './pages/signup/signup.service';
     SignupComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    ProductListComponent,
+    CartListComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +58,13 @@ import { SignupService } from './pages/signup/signup.service';
     MatFormFieldModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatSelectModule,
+    OverlayModule
   ],
-  providers: [SignupService],
+  providers: [SignupService, HomeService, NoAuthGuard, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

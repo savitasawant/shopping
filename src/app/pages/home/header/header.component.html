@@ -1,0 +1,11 @@
+<div id="header" fxLayout="row" fxFlex="100" >
+  <div class="font-size-20" fxFlex fxLayoutAlign="start center" > Hello
+    <span class="font-weight-bold ph-5" *ngIf="userData"> {{userData.username}} ,</span>
+  </div>
+
+    <div fxFlex fxLayoutAlign="end center" *ngIf="userData">
+      <button mat-icon-button (click)="logout()" class="primary-fg font-size-16">
+        <mat-icon class="mb-5">power_settings_new</mat-icon>
+      </button>
+    </div>
+</div>

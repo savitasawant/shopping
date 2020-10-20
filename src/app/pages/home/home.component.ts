@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -7,14 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _homeService:HomeService) { }
 
-  userData: any;
+  userData: any = null;
+  displayProductList: boolean = true;
+
 
   ngOnInit() {
 
-    this.userData = JSON.parse(localStorage.getItem('authToken')).value;
-    // console.log(this.userData);
+    if(JSON.parse(localStorage.getItem('authToken'))){
+      this.userData = JSON.parse(localStorage.getItem('authToken')).value[0];
+    }
+
+  }
+
+  fnDisplayProduct(action){
+    this.displayProductList = action;
   }
 
 }

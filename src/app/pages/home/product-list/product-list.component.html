@@ -1,0 +1,21 @@
+<div id="product-list" fxLayout="row wrap" fxFlex="100" >
+<div class="font-size-20 font-weight-bold mv-20 bb" fxLayout="column"> Top deals on mobiles </div>
+
+<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start center" >
+  <div class="p-15" *ngFor="let product of productList">
+    <mat-card class="example-card w-300">
+      <img mat-card-image [src]="product.img" [alt]="product.name">
+      <mat-card-content>
+        <div class="font-size-20 pv-5 fg-C45500 font-weight-bold">₹{{product.price}}</div>
+        <div class="font-size-16 pv-5 fg-4f56fe">{{product.name}}</div>
+        <div class="font-size-14 grey-616161-fg">
+         {{product.description}}
+        </div>
+      </mat-card-content>
+      <mat-card-actions fxLayoutAlign="center center">
+        <button mat-raised-button color="primary" class="add-to-cart" (click)="fnAddToCart(product)">Add to Cart</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+</div>

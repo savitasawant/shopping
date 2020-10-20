@@ -1,0 +1,44 @@
+<div fxLayout="column" fxFlex="100" class="m-20 p-20 b " id="cart-div">
+ <div fxLayout="row" fxFlex="100" class="font-size-18 font-weight-bold mb-20"> Shopping Cart </div>
+
+  <div *ngIf="cartList.length" >
+    <div fxLayout="column" class="font-size-10 mb-10" >
+      <table>
+        <tr>
+          <th class="w-100">Name</th>
+          <th class="text-center"> Qty</th>
+          <th class="text-center"> Price </th>
+        </tr>
+        <tr *ngFor="let item of cartList" >
+          <td class="ph-5 w-100">{{item.name}}</td>
+          <td class="ph-5 text-center">
+            <select class="custom_select" [(ngModel)]="item.qty" (change)="fnQtyChange(item)">
+              <option *ngFor="let qty of [0, 1, 2, 3]"> {{qty}} </option>
+            </select>
+          </td>
+          <td class="ph-5 text-center"> ₹{{item.price}} </td>
+        </tr>
+      </table>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="error-fg pv-10 font-size-10" *ngIf="maxQtyError">
+      Sorry, you can not add more than 3 qty of each product.
+    </div>
+    <div fxLayout="row" class="pv-30 font-size-18">
+      <b class="ph-10"> Total Amount : </b> ₹{{cardTotal}}
+    </div>
+
+    <div class="error-fg pv-10 font-size-10" *ngIf="totalError">
+        We are not accepting orders of total less than 1000.
+    </div>
+
+    <div fxLayout="row" class="pv-30 font-size-18">
+      <button mat-raised-button color="primary" class="checkout-btn" (click)="fnCheckout()">Checkout</button>
+    </div>
+  </div>
+
+  <div *ngIf="!cartList.length" class="pv-20 font-size-14 grey-616161-fg">
+    Your Basket is empty
+  </div>
+
+</div>

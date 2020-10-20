@@ -7,7 +7,38 @@
       "id": 2
     }
   ],
-  "cart": [],
+  "products": [
+    {
+      "id": 1,
+      "name": "OnePlus 8 (Glacial Green 6GB RAM+128GB Storage)",
+      "img": "https://images-eu.ssl-images-amazon.com/images/I/41DGKqs+UuL._AC_US160_FMwebp_QL70_.jpg",
+      "price": 300,
+      "description": "1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase"
+    },
+    {
+      "id": 2,
+      "name": "OnePlus 8 (Onyx Black 8GB RAM+128GB Storage)",
+      "img": "https://m.media-amazon.com/images/I/71vjeMN4V9L._AC_SS350_.jpg",
+      "price": 500,
+      "description": "1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase"
+    },
+    {
+      "id": 3,
+      "name": "Vivo X50 Pro (Alpha Grey, 8GB RAM, 256GB Storage) with No Cost EMI/Additional Exchange Offers",
+      "img": "https://m.media-amazon.com/images/I/71tBQRJKdWL._AC_SS350_.jpg",
+      "price": 800,
+      "description": "1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase"
+    },
+    {
+      "id": 4,
+      "name": "OnePlus 7T (Glacier Blue, 8GB RAM, Fluid AMOLED Display, 256GB Storage, 3800mAH Battery)",
+      "img": "https://m.media-amazon.com/images/I/71ncRs6HzyL._AC_SS350_.jpg",
+      "price": 1000,
+      "description": "1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase"
+    }
+  ],
+  "cart": [
+  ],
   "posts": [
     {
       "id": 1,

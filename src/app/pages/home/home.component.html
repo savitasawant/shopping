@@ -1,1 +1,34 @@
-<p>Hello {{userData.username}}</p>
+<div id="home">
+  <!-- shopping div -->
+  <div fxLayout="column" *ngIf="displayProductList">
+    <!-- header div -->
+    <div fxLayout="column" fxFlex="100">
+      <app-header [userData]="userData"></app-header>
+    </div>
+    <!-- main div -->
+    <div fxLayout="row" fxFlex="100" class="ph-20">
+      <div fxFlex="70">
+        <app-product-list></app-product-list>
+      </div>
+      <div fxFlex="30">
+        <app-cart-list (successEvent)="fnDisplayProduct(false)"></app-cart-list>
+      </div>
+    </div>
+  </div>
+
+  <!-- success msg -->
+  <div *ngIf="!displayProductList">
+    <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center" class="m-20">
+      <mat-card class="example-card w-300">
+        <mat-card-content>
+          <div class="font-size-20 p-20 fg-C45500 font-weight-bold" fxLayoutAlign="center center">
+              Thank you for shopping!!
+          </div>
+          <div class="font-size-20 pv-5 fg-C45500 font-weight-bold" fxLayoutAlign="center center">
+            <button mat-raised-button color="primary" class="continue-to-shop-btn" (click)="fnDisplayProduct(true)">Continue to Shop</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

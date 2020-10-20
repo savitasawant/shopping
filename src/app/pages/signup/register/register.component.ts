@@ -69,6 +69,8 @@ export class RegisterComponent implements OnInit {
         password: this.registerForm.value.password
     }
 
+    postData.email.trim().toLowerCase()
+
     // check in db if same user
     this.isUserAvailable(postData);
   }

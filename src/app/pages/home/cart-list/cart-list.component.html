@@ -21,19 +21,25 @@
       </table>
     </div>
     <mat-divider></mat-divider>
-    <div class="error-fg pv-10 font-size-10" *ngIf="maxQtyError">
-      Sorry, you can not add more than 3 qty of each product.
-    </div>
-    <div fxLayout="row" class="pv-30 font-size-18">
-      <b class="ph-10"> Total Amount : </b> ₹{{cardTotal}}
-    </div>
 
-    <div class="error-fg pv-10 font-size-10" *ngIf="totalError">
-        We are not accepting orders of total less than 1000.
-    </div>
+    <div fxLayout="column" >
 
-    <div fxLayout="row" class="pv-30 font-size-18">
-      <button mat-raised-button color="primary" class="checkout-btn" (click)="fnCheckout()">Checkout</button>
+      <div class="error-fg pv-10 font-size-10" *ngIf="maxQtyError" fxLayout="row" fxFlex="100">
+        Sorry, you can not add more than 3 qty of each product.
+      </div>
+
+      <div class="pv-20 font-size-18" fxLayout="row" fxFlex="100">
+        <b class="ph-10"> Total Amount : </b> ₹{{cardTotal}}
+      </div>
+
+      <div class="error-fg pv-10 font-size-10" *ngIf="totalError" fxLayout="row" fxFlex="100" fxLayoutAlign="center center">
+          We are not accepting orders of total less than 1000.
+      </div>
+
+      <div class="pv-20 font-size-18" fxLayout="row" fxFlex="100" fxLayoutAlign="center center">
+        <button mat-raised-button color="primary" class="checkout-btn" (click)="fnCheckout()">Checkout</button>
+      </div>
+
     </div>
   </div>
 

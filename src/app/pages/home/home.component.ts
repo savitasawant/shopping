@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     if(JSON.parse(localStorage.getItem('authToken'))){
-      this.userData = JSON.parse(localStorage.getItem('authToken')).value[0];
+      this.userData = JSON.parse(localStorage.getItem('authToken')).value;
     }
 
   }

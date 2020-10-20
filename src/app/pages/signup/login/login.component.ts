@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
 
       // create localStorage and set new data
       const tokenData = {
-          value: this.responseData,
+          value: {"username":this.responseData[0].username, "email":this.responseData[0].email},
           time: new Date().getTime()
       };
 
@@ -86,7 +86,7 @@ export class LoginComponent implements OnInit {
     }, err => {
         console.error(err);
         this.loginApiCall = false;
-        this.loginError = err.error.message;
+        this.loginError = 'Something went wrong. Please try again';
     });
 
   }

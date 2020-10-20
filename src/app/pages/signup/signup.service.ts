@@ -10,7 +10,7 @@ const httpOptions = {
 @Injectable()
 export class SignupService {
 
-  apiUrl = 'http://localhost:3000';
+  apiUrl = 'https://5f8f3f97693e730016d7aec6.mockapi.io';
 
   constructor(public http: HttpClient) {
   }

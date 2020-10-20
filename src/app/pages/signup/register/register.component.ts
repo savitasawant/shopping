@@ -106,7 +106,7 @@ export class RegisterComponent implements OnInit {
       this.registerApiCall = false;
 
       const tokenData = {
-          value: this.responseData,
+        value: {"username":this.responseData.username, "email":this.responseData.email},
           time: new Date().getTime()
       };
 

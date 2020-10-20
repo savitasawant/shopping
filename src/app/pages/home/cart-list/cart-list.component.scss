@@ -1,8 +1,11 @@
 #cart-div{
-  position: fixed;
-  width: 350px;
-  top:80px;
-  right: 20px;
+
+  @media screen and (min-width: 970px) {
+    position: fixed;
+    width: 400px;
+    top:80px;
+    right: 20px;
+  }
 
   .checkout-btn{
     background: #f2cb6a;

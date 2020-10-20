@@ -6,11 +6,11 @@
       <app-header [userData]="userData"></app-header>
     </div>
     <!-- main div -->
-    <div fxLayout="row" fxFlex="100" class="ph-20 mt-80">
-      <div fxFlex="70">
+    <div fxLayout="row wrap" fxFlex="100" class="ph-20 mt-80">
+      <div fxFlex="60" fxFlex.sm="100">
         <app-product-list></app-product-list>
       </div>
-      <div fxFlex="30">
+      <div fxFlex="40" fxFlex.sm="100">
         <app-cart-list (successEvent)="fnDisplayProduct(false)"></app-cart-list>
       </div>
     </div>

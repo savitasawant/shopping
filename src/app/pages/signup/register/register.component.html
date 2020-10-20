@@ -1,0 +1,73 @@
+<div id="register" fxLayout="column" fxFlex="100" >
+  <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+    <div class="mv-20 font-size-14 register-input">
+      <mat-form-field appearance="outline" floatLabel="never" >
+        <input matInput placeholder="Username*" type="text" formControlName="username">
+      </mat-form-field>
+      <div class="mv-10 error-fg">
+        <small class="form-text text-muted" *ngIf="registerForm.controls.username.touched && registerForm.controls.username.errors?.required">
+            Please enter username.
+        </small>
+      </div>
+    </div>
+
+    <!-- email -->
+    <div class="mv-20 font-size-14 register-input">
+      <mat-form-field appearance="outline" floatLabel="never" >
+        <input matInput placeholder="Email*" type="email" formControlName="email">
+      </mat-form-field>
+      <div class="mv-10 error-fg">
+        <small class="form-text text-muted" *ngIf="registerForm.controls.email.touched && registerForm.controls.email.errors?.required">
+            Please enter email address.
+        </small>
+        <small class="form-text text-muted" *ngIf="registerForm.controls.email.touched && registerForm.controls.email.errors?.email">
+          Email address not well formed.
+        </small>
+      </div>
+    </div>
+
+    <!-- password -->
+    <div class="mv-20 font-size-14 register-input">
+      <mat-form-field floatLabel="never" appearance="outline">
+        <input [type]="showPassword ? 'text' : 'password'" matInput placeholder="Password*" formControlName="password">
+        <mat-icon matSuffix class="pointer font-size-20" (click)="togglePassword()"> {{showPassword ? 'visibility_off' : 'visibility'}} </mat-icon>
+      </mat-form-field>
+      <div class="mv-10 error-fg">
+        <small class="form-text text-muted" *ngIf="registerForm.controls.password.touched && registerForm.get('password').errors?.required">
+            Please enter password.
+        </small>
+      </div>
+    </div>
+
+    <!-- confirm password -->
+    <div class="mv-20 font-size-14 register-input">
+      <mat-form-field floatLabel="never" appearance="outline">
+        <input type="password" matInput formControlName="confirmPassword" placeholder="Confirm password*" />
+      </mat-form-field>
+        <div class="mv-10 error-fg">
+          <small *ngIf="registerForm.get('confirmPassword').touched && registerForm.get('confirmPassword').errors?.required" >
+            Please confirm password.
+          </small>
+          <small *ngIf="registerForm.get('confirmPassword').errors?.mustMatch && registerForm.get('confirmPassword').touched">
+            Password does not match
+          </small>
+        </div>
+
+    </div>
+
+    <!-- error message -->
+    <div class="mb-10" class="font-size-14 red-fg">
+        {{ registerError }}
+    </div>
+
+    <!-- sign-up button -->
+    <div class="mv-30">
+      <button class="full-width register-button pointer" type="submit" mat-button [disabled]="registerApiCall">SIGN UP</button>
+    </div>
+
+    <div class="text-center pt-10" *ngIf="registerApiCall">
+      <mat-spinner diameter="25" ></mat-spinner>
+    </div>
+
+  </form>
+</div>

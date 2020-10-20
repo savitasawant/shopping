@@ -1,0 +1,43 @@
+<div id="login" fxLayout="column" fxFlex="100" >
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <!-- username -->
+    <div class="mv-20 font-size-14 login-input">
+      <mat-form-field appearance="outline" floatLabel="never" >
+        <input matInput placeholder="Username*" type="text" formControlName="username">
+      </mat-form-field>
+      <div class="mv-10 error-fg">
+        <small class="form-text text-muted" *ngIf="loginForm.controls.username.touched && loginForm.controls.username.errors?.required">
+            Please enter username.
+        </small>
+      </div>
+    </div>
+
+    <!-- password -->
+    <div class="mv-20 font-size-14 login-input">
+      <mat-form-field floatLabel="never" appearance="outline">
+        <input [type]="showPassword ? 'text' : 'password'" matInput placeholder="Password*" formControlName="password">
+        <mat-icon matSuffix class="pointer font-size-20" (click)="togglePassword()"> {{showPassword ? 'visibility_off' : 'visibility'}} </mat-icon>
+      </mat-form-field>
+      <div class="mv-10 error-fg">
+        <small class="form-text text-muted" *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
+            Please enter password.
+        </small>
+      </div>
+    </div>
+
+    <!-- error message -->
+    <div class="mb-10" class="font-size-14 red-fg">
+        {{ loginError }}
+    </div>
+
+    <!-- sign-in button -->
+    <div class="mv-30">
+      <button class="full-width login-button pointer" type="submit" mat-button [disabled]="loginApiCall">SIGN IN</button>
+    </div>
+
+    <div class="text-center pt-10" *ngIf="loginApiCall">
+      <mat-spinner diameter="25" ></mat-spinner>
+    </div>
+
+  </form>
+</div>

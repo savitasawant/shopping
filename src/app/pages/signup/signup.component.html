@@ -1,0 +1,33 @@
+<div id="sign-up">
+  <div class="signup-wrapper" fxLayout="row">
+    <div class="card-overlay" fxLayout="row" fxFlex="100">
+      <div fxLayout="column" fxLayoutAlign="start end" fxFlex>
+        <mat-card class="signup-card mat-elevation-z8">
+          <mat-card-title>
+            <div class="mv-20">
+              <div class="black-fg font-weight-bold font-size-25">XYZ Shopping</div>
+            </div>
+          </mat-card-title>
+          <mat-card-content class="pb-20">
+            <div *ngIf="showLogin">
+              <app-login></app-login>
+
+              <div fxLayout="row" fxLayoutAlign="center center" >
+                Don't have an account? <a class="create-hear" (click)="showLogin = !showLogin"> Sign up </a>
+              </div>
+            </div>
+            <div *ngIf="!showLogin">
+              <app-register></app-register>
+
+              <div fxLayout="row" fxLayoutAlign="center center">
+                Have already an account? <a class="create-hear" (click)="showLogin = !showLogin"> Login </a>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+  </div>
+</div>
+
+
+

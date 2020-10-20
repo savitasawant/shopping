@@ -1,0 +1,59 @@
+#sign-up{
+
+  .signup-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background: url('https://thumbs.dreamstime.com/b/credit-card-to-pay-online-shopping-green-background-gift-boxes-gadget-copy-space-top-view-128760551.jpg');
+    overflow: hidden;
+    background-size: cover;
+  }
+
+  .card-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .signup-card {
+    // width: 500px;
+    border-radius: 15px;
+    margin: 60px;
+    background: white;
+    padding: 30px 60px;
+  }
+
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .error {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: red;
+  }
+
+  /** No CSS for this example */
+  ::ng-deep .mat-form-field-appearance-outline {
+    width: 300px;
+    height: 45px;
+    line-height: 1.725;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    padding: 10px 10px 10px 10px;
+  }
+
+  ::ng-deep .mat-form-field-infix {
+    padding: 3px 0 3px 0;
+  }
+
+  .create-hear{
+    margin:0 5px;
+    border-bottom: 1px solid #233669;
+    color: #233669;
+    cursor: pointer;
+  }
+
+}
+

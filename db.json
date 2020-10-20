@@ -1,11 +1,5 @@
 {
   "user": [
-    {
-      "username": "xyz",
-      "email": "xyz@gmail.com",
-      "password": "12345",
-      "id": 2
-    }
   ],
   "products": [
     {
@@ -37,8 +31,7 @@
       "description": "1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase"
     }
   ],
-  "cart": [
-  ],
+  "cart": [],
   "posts": [
     {
       "id": 1,

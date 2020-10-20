@@ -1,7 +1,7 @@
 <div fxLayout="column" fxFlex="100" class="m-20 p-20 b " id="cart-div">
  <div fxLayout="row" fxFlex="100" class="font-size-18 font-weight-bold mb-20"> Shopping Cart </div>
-
-  <div *ngIf="cartList.length" >
+<mat-divider></mat-divider>
+  <div *ngIf="cartList.length" class="mv-20" >
     <div fxLayout="column" class="font-size-10 mb-10" >
       <table>
         <tr>
@@ -10,7 +10,7 @@
           <th class="text-center"> Price </th>
         </tr>
         <tr *ngFor="let item of cartList" >
-          <td class="ph-5 w-100">{{item.name}}</td>
+          <td class="ph-5 pv-20 ellipsis-150" matTooltip="{{item.name}}">{{item.name}}</td>
           <td class="ph-5 text-center">
             <select class="custom_select" [(ngModel)]="item.qty" (change)="fnQtyChange(item)">
               <option *ngFor="let qty of [0, 1, 2, 3]"> {{qty}} </option>

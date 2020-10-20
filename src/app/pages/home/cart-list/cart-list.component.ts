@@ -71,8 +71,8 @@ export class CartListComponent implements OnInit {
       }
     }else{
       product.qty = parseInt(product.qty);
-      this.getCardTotal();
     }
+    this.getCardTotal();
   }
 
   fnCheckout(){
